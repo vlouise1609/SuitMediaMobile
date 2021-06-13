@@ -3,6 +3,7 @@ package com.example.suitmediamobile;
 public class Event {
     public String cEventName, cEventTime;
     public Integer cEventImages;
+    public Double coordinate1, coordinate2;
 
     public Event(){
 
@@ -12,6 +13,14 @@ public class Event {
         this.cEventName = cEventName;
         this.cEventTime = cEventTime;
         this.cEventImages = cEventImages;
+    }
+
+    public Event(String cEventName, String cEventTime, Integer cEventImages, Double coordinate1, Double coordinate2) {
+        this.cEventName = cEventName;
+        this.cEventTime = cEventTime;
+        this.cEventImages = cEventImages;
+        this.coordinate1 = coordinate1;
+        this.coordinate2 = coordinate2;
     }
 
     public String getcEventName() {

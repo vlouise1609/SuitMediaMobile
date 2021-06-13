@@ -1,32 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".Home"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_validation">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:gravity="center_horizontal"
+        android:text="Selamat Datang!"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:gravity="center"
+        android:text="@string/detail_home_text"
+        android:textColor="@color/white"
+        android:textSize="17sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/btn_add_photo" />
 
     <EditText
         android:id="@+id/nameText"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:backgroundTint="@color/white"
         android:hint="Masukkan nama"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/nextBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="next"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btn_signup_normal"
+        android:backgroundTint="@color/white"
         android:onClick="nextActivity"
-        app:layout_constraintEnd_toEndOf="@+id/nameText"
-        app:layout_constraintStart_toStartOf="@+id/nameText"
-        app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:padding="10dp"
+        android:text="Selesai"
+        android:textColor="@color/white" />
+
+</LinearLayout>

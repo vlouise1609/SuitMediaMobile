@@ -23,9 +23,11 @@ public class Home extends AppCompatActivity {
     }
 
     public void nextActivity(View v) {
+        nextBtn.setBackgroundResource(R.drawable.btn_signup_selected);
         Intent intent = new Intent(this, ProfileActivity.class);
         String name = nameTxt.getText().toString();
         intent.putExtra("nameTxt", name);
         startActivity(intent);
+
     }
 }

@@ -3,24 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="10dp">
-
-    <ImageView
-        android:id="@+id/eventPicture"
-        android:layout_width="100dp"
-        android:layout_height="100dp"/>
+    android:gravity="center"
+    android:padding="5dp">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_vertical"
-        android:padding="5dp">
+        android:background="@drawable/bg_list"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/eventName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
             android:text="Event Name"
             android:textSize="18sp"/>
 
@@ -29,8 +28,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="16 September 1000"
-            android:textSize="18sp"/>
+            android:textColor="@color/gold"
+            android:textSize="14sp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/eventHighlight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#nuticia"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@color/gray"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/eventHighlight1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="#nuticia"
+                android:textColor="@color/white"
+                android:padding="5dp"
+                android:background="@color/gray"
+                android:textSize="14sp"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/eventDetail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:text="This is lorem ipsun"
+            android:textColor="@color/gray"
+            android:textSize="14sp"/>
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/eventPicture"
+        android:layout_width="120dp"
+        android:layout_height="150dp" />
 </LinearLayout>

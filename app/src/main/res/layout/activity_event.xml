@@ -4,16 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
+
+    android:background="@color/white_gray"
     tools:context=".EventActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:src="@drawable/btn_backarticle_normal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="MESSAGE FROM CODI"
+            android:textColor="@color/teal_700"
+            android:textSize="20sp" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginLeft="40dp"
+            android:background="@color/white"
+            android:src="@drawable/ic_baseline_search_24" />
+
+        <ImageButton
+            android:id="@+id/mapView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@color/white"
+            android:onClick="fragmentEvent"
+            android:src="@drawable/btn_newarticle_normal" />
+
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <ListView
         android:id="@+id/eventListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,15 +6,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 public class EventActivity extends AppCompatActivity {
 
-    ListView listView;
-    ArrayList<Event> eventList;
     String name;
+    Button mapViewBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,34 +24,34 @@ public class EventActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("nameTxt");
 
-        eventList = new ArrayList<>();
+        Bundle bundle1 = new Bundle();
+        bundle1.putString("name", name);
+        // set Fragmentclass Arguments
+        EventListFargment fragobj = new EventListFargment();
+        fragobj.setArguments(bundle1);
 
-        //dummy datas
-        Event event1 = new Event("Coldplay Summer Tour", "15 September 2022", R.drawable.event1);
-        Event event2 = new Event("New Year New York", "03 July 2022", R.drawable.event2);
-        Event event3 = new Event("SeaFood Festival", "14 May 2022", R.drawable.event3);
-        Event event4 = new Event("Karate Kid Day", "11 June 2022", R.drawable.event4);
-        eventList.add(event1);
-        eventList.add(event2);
-        eventList.add(event3);
-        eventList.add(event4);
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragobj)
+                .addToBackStack(null)
+                .commit();
 
-        listView = findViewById(R.id.eventListView);
-        EventAdapter adapter = new EventAdapter(this, eventList);
-        listView.setAdapter(adapter);
+        Map fragobj2 = new Map();
+        fragobj2.setArguments(bundle1);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                Intent intent = new Intent(this, ProfileActivity.class);
-                Intent intent = new Intent(view.getContext(), ProfileActivity.class);
-                intent.putExtra("nameTxt", name);
-                intent.putExtra("eventNameTxt", eventList.get(position).cEventName);
-                intent.putExtra("flag", 1);
-                startActivity(intent);
-            }
-        });
+        getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, fragobj)
+                .addToBackStack(null)
+                .commit();
 
     }
+
+    public void fragmentEvent(View v) {
+        EventFragment eventFragment = new EventFragment();
+        AppCompatActivity activity = (AppCompatActivity) v.getContext();
+
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, eventFragment)
+                .addToBackStack(null)
+                .commit();
+
+    }
+
+
 }

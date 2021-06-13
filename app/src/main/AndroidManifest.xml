@@ -3,6 +3,10 @@
     package="com.example.suitmediamobile">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
 
     <application
         android:allowBackup="true"
@@ -11,10 +15,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.SuitMediaMobile">
+        android:theme="@style/Theme.AppCompat.NoActionBar">
+
+        <meta-data  android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCtSkS5A9e9n4o7Y8H_TpeW6O8bKOx1wRg"/>
+
         <activity android:name=".GuestActivity"></activity>
         <activity android:name=".EventActivity" />
-        <activity android:name=".ProfileActivity" />
+        <activity android:name=".ProfileActivity">
+        </activity>
         <activity android:name=".Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

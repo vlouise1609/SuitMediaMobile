@@ -5,19 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
+    android:background="@drawable/bg_validation"
     tools:context=".ProfileActivity">
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama   :"
-        android:textSize="16sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.351"
@@ -30,6 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView"
@@ -41,6 +38,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:text="@string/pilih_event_text"
+        android:background="@drawable/btn_signup_normal"
+        android:backgroundTint="@color/white"
         android:onClick="eventFragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,6 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="@string/pilih_guest_text"
+        android:background="@drawable/btn_signup_normal"
+        android:backgroundTint="@color/white"
         android:onClick="guestFragment"
         app:layout_constraintEnd_toEndOf="@+id/buttonEvent"
         app:layout_constraintHorizontal_bias="0.0"
